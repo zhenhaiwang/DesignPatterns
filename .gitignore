@@ -1,0 +1,10 @@
+# User-specific files
+*.suo
+*.csproj
+
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Bb]in/
+[Oo]bj/
