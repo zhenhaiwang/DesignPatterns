@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/// <summary>
+/// author zhenhaiwang
+/// email 601748025@qq.com
+/// </summary>
+
+using System;
 
 namespace AbstractFactory
 {

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// <summary>
+/// author zhenhaiwang
+/// email 601748025@qq.com
+/// </summary>
+
+using System;
 
 namespace FactoryMethod
 {

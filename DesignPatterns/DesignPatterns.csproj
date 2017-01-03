@@ -43,11 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObserverPattern\ObserverPattern.cs" />
     <Compile Include="SimpleFactory\SimpleFactory.cs" />
     <Compile Include="FactoryMethod\FactoryMethod.cs" />
     <Compile Include="AbstractFactory\AbstractFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingletonPattern\SingletonPattern.cs" />
+    <Compile Include="StatePattern\StatePattern.cs" />
+    <Compile Include="StrategyPattern\StrategyPattern.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
