@@ -15,7 +15,8 @@ using System.Threading.Tasks;
 //using SingletonPattern;
 //using ObserverPattern;
 //using StrategyPattern;
-using StatePattern;
+//using StatePattern;
+using DecoratorPattern;
 
 namespace DesignPatterns
 {
@@ -51,27 +52,38 @@ namespace DesignPatterns
             //Console.WriteLine(result.ToString());
 
             //StatePattern
-            PlayerController controller = new PlayerController(7);
-            while (true)
-            {
-                ConsoleKeyInfo input = Console.ReadKey();
-                switch (input.KeyChar)
-                {
-                    case 'A':
-                        controller.PressA();
-                        break;
-                    case 'B':
-                        controller.PressB();
-                        break;
-                    case 'C':
-                        controller.PressC();
-                        break;
-                    case 'Q':
-                        return;
-                }
-            }
+            //PlayerController controller = new PlayerController(7);
+            //while (true)
+            //{
+            //    ConsoleKeyInfo input = Console.ReadKey();
+            //    switch (input.KeyChar)
+            //    {
+            //        case 'A':
+            //            controller.PressA();
+            //            break;
+            //        case 'B':
+            //            controller.PressB();
+            //            break;
+            //        case 'C':
+            //            controller.PressC();
+            //            break;
+            //        case 'Q':
+            //            return;
+            //    }
+            //}
 
-            //Console.Read();
+            //DecoratorPattern
+            Component blackCoffee = new BlackCoffee();
+
+            blackCoffee =
+                new Sugar(                              //4.再加糖
+                    new Milk(                           //3.再加牛奶
+                        new Sugar(                      //2.加糖
+                            new Milk(blackCoffee))));   //1.加牛奶
+
+            blackCoffee.Print();
+
+            Console.Read();
         }
     }
 }
