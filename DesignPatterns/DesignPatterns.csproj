@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandPattern\CommandPattern.cs" />
     <Compile Include="DecoratorPattern\DecoratorPattern.cs" />
     <Compile Include="ObserverPattern\ObserverPattern.cs" />
     <Compile Include="SimpleFactory\SimpleFactory.cs" />

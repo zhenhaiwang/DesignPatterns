@@ -16,7 +16,8 @@ using System.Threading.Tasks;
 //using ObserverPattern;
 //using StrategyPattern;
 //using StatePattern;
-using DecoratorPattern;
+//using DecoratorPattern;
+using CommandPattern;
 
 namespace DesignPatterns
 {
@@ -73,15 +74,30 @@ namespace DesignPatterns
             //}
 
             //DecoratorPattern
-            Component blackCoffee = new BlackCoffee();
+            //Component blackCoffee = new BlackCoffee();
+            //blackCoffee =
+            //    new Sugar(                              //4.再加糖
+            //        new Milk(                           //3.再加牛奶
+            //            new Sugar(                      //2.加糖
+            //                new Milk(blackCoffee))));   //1.加牛奶
+            //blackCoffee.Print();
 
-            blackCoffee =
-                new Sugar(                              //4.再加糖
-                    new Milk(                           //3.再加牛奶
-                        new Sugar(                      //2.加糖
-                            new Milk(blackCoffee))));   //1.加牛奶
+            //CommandPattern
+            RemoteController controller = new RemoteController();
+            Light light = new Light();
+            TV tv = new TV();
 
-            blackCoffee.Print();
+            LightOnCommand lightOn = new LightOnCommand(light);
+            LightOffCommand lightOff = new LightOffCommand(light);
+            controller.SetCommand(lightOn, lightOff);
+            controller.ClickOn();
+            controller.ClickOff();
+
+            TVOnCommand tvOn = new TVOnCommand(tv);
+            TVOffCommand tvOff = new TVOffCommand(tv);
+            controller.SetCommand(tvOn, tvOff);
+            controller.ClickOn();
+            controller.ClickOff();
 
             Console.Read();
         }
