@@ -82,12 +82,6 @@ namespace CommandPattern
         }
     }
 
-    public class NoCommand : Command   //空命令
-    {
-        public NoCommand() { }
-        public void Execute() { }
-    }
-
     //动作的请求者(遥控器)
     public class RemoteController
     {
