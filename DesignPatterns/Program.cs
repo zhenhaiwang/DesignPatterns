@@ -14,10 +14,18 @@ using System;
 //using StatePattern;
 //using DecoratorPattern;
 //using CommandPattern;
-using TemplateMethod;
+//using TemplateMethod;
+//using AdapterPattern;
+//using FacadePattern;
+using IteratorPattern;
 
 namespace DesignPatterns
 {
+    /// ******** ///
+    /// 变化 解耦 ///
+    /// 扩展 艺术 ///
+    /// ******** ///
+
     class Program
     {
         static void Main(string[] args)
@@ -86,13 +94,11 @@ namespace DesignPatterns
             //RemoteController controller = new RemoteController();
             //Light light = new Light();
             //TV tv = new TV();
-
             //LightOnCommand lightOn = new LightOnCommand(light);
             //LightOffCommand lightOff = new LightOffCommand(light);
             //controller.SetCommand(lightOn, lightOff);
             //controller.ClickOn();
             //controller.ClickOff();
-
             //TVOnCommand tvOn = new TVOnCommand(tv);
             //TVOffCommand tvOff = new TVOffCommand(tv);
             //controller.SetCommand(tvOn, tvOff);
@@ -100,12 +106,37 @@ namespace DesignPatterns
             //controller.ClickOff();
 
             //10.TemplateMethod
-            ConcreteMethod1 method1 = new ConcreteMethod1();
-            Console.WriteLine("Execute method1");
-            method1.Execute();
-            ConcreteMethod2 method2 = new ConcreteMethod2();
-            Console.WriteLine("\nExecute method2");
-            method2.Execute();
+            //ConcreteMethod1 method1 = new ConcreteMethod1();
+            //Console.WriteLine("Execute method1");
+            //method1.Execute();
+            //ConcreteMethod2 method2 = new ConcreteMethod2();
+            //Console.WriteLine("\nExecute method2");
+            //method2.Execute();
+
+            //11.AdapterPattern
+            //ConcreteEnumeration enumeration = new ConcreteEnumeration();
+            //ConcreteIteration iteration = new ConcreteIteration();
+            //Iteration adapter = new Adapter(enumeration);
+            //adapter.HasNext();
+            //adapter.Next();
+            //adapter.Remove(null);   //此处抛出异常
+
+            //12.FacadePattern
+            //SubSystem1 sys1 = new SubSystem1();
+            //SubSystem2 sys2 = new SubSystem2();
+            //SubSystem3 sys3 = new SubSystem3();
+            //Facade facade = new Facade(sys1, sys2, sys3);
+            //facade.Execute();
+
+            //13.IteratorPattern
+            NameData name = new NameData();
+            ColorData color = new ColorData();
+            Iterator nameIterator = name.CreateIterator();
+            while (nameIterator.HasNext())
+                Console.WriteLine((string)nameIterator.Next());
+            Iterator colorIterator = color.CreateIterator();
+            while (colorIterator.HasNext())
+                Console.WriteLine((string)colorIterator.Next());
 
             Console.Read();
         }
