@@ -54,6 +54,7 @@
     <Compile Include="SingletonPattern\SingletonPattern.cs" />
     <Compile Include="StatePattern\StatePattern.cs" />
     <Compile Include="StrategyPattern\StrategyPattern.cs" />
+    <Compile Include="TemplateMethod\TemplateMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

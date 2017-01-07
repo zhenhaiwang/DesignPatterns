@@ -3,6 +3,8 @@
 /// email 601748025@qq.com
 /// </summary>
 
+using System;
+
 namespace SingletonPattern
 {
     //多线程环境下要考虑线程安全问题，同步访问，加锁
@@ -23,5 +25,10 @@ namespace SingletonPattern
 
         //注意！构造函数要声明为私有
         private Singleton() { }
+
+        public void Print()
+        {
+            Console.WriteLine("Singleton instance Print().");
+        }
     }
 }

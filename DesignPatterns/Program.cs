@@ -13,7 +13,8 @@ using System;
 //using StrategyPattern;
 //using StatePattern;
 //using DecoratorPattern;
-using CommandPattern;
+//using CommandPattern;
+using TemplateMethod;
 
 namespace DesignPatterns
 {
@@ -21,34 +22,37 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            //SimpleFactory
+            //1.SimpleFactory
             //Animal animal = Factory.CreatAnimal("Cat");
             //animal.PrintName();
 
-            //FactoryMethod
+            //2.FactoryMethod
             //CatFactory cf = new CatFactory();
             //Animal animal = cf.CreatAnimal("");
             //animal.PrintName();
 
-            //AbstractFactory
+            //3.AbstractFactory
             //BlueCatFactory bcf = new BlueCatFactory();
             //LittleCat cat = bcf.CreatLittleCat("");
             //cat.PrintName();
 
-            //ObserverPattern
+            //4.SingletonPattern
+            //Singleton.instance.Print();
+
+            //5.ObserverPattern
             //ConcreteSubject subject = new ConcreteSubject();
             //ConcreteObserver observer = new ConcreteObserver(subject);
             //subject.SetData("Data is changed!");
             //observer.Destroy();
 
-            //StrategyPattern
+            //6.StrategyPattern
             //Addition addition = new Addition();
             ////Multiplication multiplication = new Multiplication();
             //Calculator calculator = new Calculator(addition);
             //int result = calculator.Compute(10, 5);
             //Console.WriteLine(result.ToString());
 
-            //StatePattern
+            //7.StatePattern
             //PlayerController controller = new PlayerController(7);
             //while (true)
             //{
@@ -69,7 +73,7 @@ namespace DesignPatterns
             //    }
             //}
 
-            //DecoratorPattern
+            //8.DecoratorPattern
             //Component blackCoffee = new BlackCoffee();
             //blackCoffee =
             //    new Sugar(                              //4.再加糖
@@ -78,22 +82,30 @@ namespace DesignPatterns
             //                new Milk(blackCoffee))));   //1.加牛奶
             //blackCoffee.Print();
 
-            //CommandPattern
-            RemoteController controller = new RemoteController();
-            Light light = new Light();
-            TV tv = new TV();
+            //9.CommandPattern
+            //RemoteController controller = new RemoteController();
+            //Light light = new Light();
+            //TV tv = new TV();
 
-            LightOnCommand lightOn = new LightOnCommand(light);
-            LightOffCommand lightOff = new LightOffCommand(light);
-            controller.SetCommand(lightOn, lightOff);
-            controller.ClickOn();
-            controller.ClickOff();
+            //LightOnCommand lightOn = new LightOnCommand(light);
+            //LightOffCommand lightOff = new LightOffCommand(light);
+            //controller.SetCommand(lightOn, lightOff);
+            //controller.ClickOn();
+            //controller.ClickOff();
 
-            TVOnCommand tvOn = new TVOnCommand(tv);
-            TVOffCommand tvOff = new TVOffCommand(tv);
-            controller.SetCommand(tvOn, tvOff);
-            controller.ClickOn();
-            controller.ClickOff();
+            //TVOnCommand tvOn = new TVOnCommand(tv);
+            //TVOffCommand tvOff = new TVOffCommand(tv);
+            //controller.SetCommand(tvOn, tvOff);
+            //controller.ClickOn();
+            //controller.ClickOff();
+
+            //10.TemplateMethod
+            ConcreteMethod1 method1 = new ConcreteMethod1();
+            Console.WriteLine("Execute method1");
+            method1.Execute();
+            ConcreteMethod2 method2 = new ConcreteMethod2();
+            Console.WriteLine("\nExecute method2");
+            method2.Execute();
 
             Console.Read();
         }
