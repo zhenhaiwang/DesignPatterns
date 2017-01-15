@@ -18,7 +18,8 @@ using System;
 //using AdapterPattern;
 //using FacadePattern;
 //using IteratorPattern;
-using CompositePattern;
+//using CompositePattern;
+using ProxyPattern;
 
 namespace DesignPatterns
 {
@@ -140,16 +141,21 @@ namespace DesignPatterns
             //    Console.WriteLine((string)colorIterator.Next());
 
             //14.CompositePattern
-            MenuComponent rootMenu = new Menu("文件");
-            MenuComponent openMenu = new Menu("打开");
-            MenuComponent projectItem = new MenuItem("项目/解决方案");
-            MenuComponent closeItem = new MenuItem("关闭");
-            MenuComponent quitItem = new MenuItem("退出");
-            rootMenu.Add(closeItem);
-            rootMenu.Add(quitItem);
-            rootMenu.Add(openMenu);
-            openMenu.Add(projectItem);
-            rootMenu.Print();
+            //MenuComponent rootMenu = new Menu("文件");
+            //MenuComponent openMenu = new Menu("打开");
+            //MenuComponent projectItem = new MenuItem("项目/解决方案");
+            //MenuComponent closeItem = new MenuItem("关闭");
+            //MenuComponent quitItem = new MenuItem("退出");
+            //rootMenu.Add(closeItem);
+            //rootMenu.Add(quitItem);
+            //rootMenu.Add(openMenu);
+            //openMenu.Add(projectItem);
+            //rootMenu.Print();
+
+            //15.ProxyPattern
+            Proxy proxy = Proxy.RegisterProxy("http://...");
+            if(proxy != null)
+                proxy.Request();
 
             Console.Read();
         }

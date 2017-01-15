@@ -50,6 +50,7 @@
     <Compile Include="FacadePattern\FacadePattern.cs" />
     <Compile Include="IteratorPattern\IteratorPattern.cs" />
     <Compile Include="ObserverPattern\ObserverPattern.cs" />
+    <Compile Include="ProxyPattern\ProxyPattern.cs" />
     <Compile Include="SimpleFactory\SimpleFactory.cs" />
     <Compile Include="FactoryMethod\FactoryMethod.cs" />
     <Compile Include="AbstractFactory\AbstractFactory.cs" />
