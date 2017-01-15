@@ -66,6 +66,20 @@ namespace IteratorPattern
         }
     }
 
+    //空迭代器(为了解耦具体迭代器类型和业务逻辑实现)
+    public class NullIterator : Iterator
+    {
+        public bool HasNext()
+        {
+            return false;
+        }
+
+        public object Next()
+        {
+            return null;
+        }
+    }
+
     //聚合数据接口
     public interface Aggregate
     {

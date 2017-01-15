@@ -46,7 +46,7 @@ namespace AdapterPattern
 
         public void Remove(object obj)
         {
-            throw new NotSupportedException();  //枚举器不支持此方法
+            throw new NotSupportedException();  //枚举器不支持此方法，抛出运行时异常
         }
     }
 

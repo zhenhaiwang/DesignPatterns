@@ -17,7 +17,8 @@ using System;
 //using TemplateMethod;
 //using AdapterPattern;
 //using FacadePattern;
-using IteratorPattern;
+//using IteratorPattern;
+using CompositePattern;
 
 namespace DesignPatterns
 {
@@ -129,14 +130,26 @@ namespace DesignPatterns
             //facade.Execute();
 
             //13.IteratorPattern
-            NameData name = new NameData();
-            ColorData color = new ColorData();
-            Iterator nameIterator = name.CreateIterator();
-            while (nameIterator.HasNext())
-                Console.WriteLine((string)nameIterator.Next());
-            Iterator colorIterator = color.CreateIterator();
-            while (colorIterator.HasNext())
-                Console.WriteLine((string)colorIterator.Next());
+            //NameData name = new NameData();
+            //ColorData color = new ColorData();
+            //Iterator nameIterator = name.CreateIterator();
+            //while (nameIterator.HasNext())
+            //    Console.WriteLine((string)nameIterator.Next());
+            //Iterator colorIterator = color.CreateIterator();
+            //while (colorIterator.HasNext())
+            //    Console.WriteLine((string)colorIterator.Next());
+
+            //14.CompositePattern
+            MenuComponent rootMenu = new Menu("文件");
+            MenuComponent openMenu = new Menu("打开");
+            MenuComponent projectItem = new MenuItem("项目/解决方案");
+            MenuComponent closeItem = new MenuItem("关闭");
+            MenuComponent quitItem = new MenuItem("退出");
+            rootMenu.Add(closeItem);
+            rootMenu.Add(quitItem);
+            rootMenu.Add(openMenu);
+            openMenu.Add(projectItem);
+            rootMenu.Print();
 
             Console.Read();
         }

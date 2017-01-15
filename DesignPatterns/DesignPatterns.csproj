@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AdapterPattern\AdapterPattern.cs" />
     <Compile Include="CommandPattern\CommandPattern.cs" />
+    <Compile Include="CompositePattern\CompositePattern.cs" />
     <Compile Include="DecoratorPattern\DecoratorPattern.cs" />
     <Compile Include="FacadePattern\FacadePattern.cs" />
     <Compile Include="IteratorPattern\IteratorPattern.cs" />
