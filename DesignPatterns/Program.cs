@@ -20,7 +20,8 @@ using System;
 //using IteratorPattern;
 //using CompositePattern;
 //using ProxyPattern;
-using BridgePattern;
+//using BridgePattern;
+using PrototypePattern;
 
 namespace DesignPatterns
 {
@@ -158,11 +159,20 @@ namespace DesignPatterns
             //    proxy.Request();
 
             //16.BridgePattern
-            CalculatorAbstraction calculator = new Calculator();
-            calculator.strategy = new Addition();
-            Console.WriteLine(calculator.Compute(10, 5).ToString());
-            calculator.strategy = new Multiplication();
-            Console.WriteLine(calculator.Compute(10, 5).ToString());
+            //CalculatorAbstraction calculator = new Calculator();
+            //calculator.strategy = new Addition();
+            //Console.WriteLine(calculator.Compute(10, 5).ToString());
+            //calculator.strategy = new Multiplication();
+            //Console.WriteLine(calculator.Compute(10, 5).ToString());
+
+            //17.PrototypePattern
+            ConcretePrototype prototype = new ConcretePrototype();
+            ConcretePrototype deepClone = prototype.Clone(true) as ConcretePrototype;       //深克隆
+            Console.WriteLine(prototype == deepClone);
+            Console.WriteLine(prototype.member == deepClone.member);
+            ConcretePrototype shallowClone = prototype.Clone(false) as ConcretePrototype;   //浅克隆
+            Console.WriteLine(prototype == shallowClone);
+            Console.WriteLine(prototype.member == shallowClone.member);
 
             Console.Read();
         }
