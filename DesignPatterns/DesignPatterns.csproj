@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdapterPattern\AdapterPattern.cs" />
+    <Compile Include="BridgePattern\BridgePattern.cs" />
     <Compile Include="CommandPattern\CommandPattern.cs" />
     <Compile Include="CompositePattern\CompositePattern.cs" />
     <Compile Include="DecoratorPattern\DecoratorPattern.cs" />

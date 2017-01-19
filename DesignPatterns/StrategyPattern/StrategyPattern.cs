@@ -11,16 +11,6 @@ namespace StrategyPattern
         int compute(int x, int y);
     }
 
-    //抽象计算器类
-    public abstract class AbstractCalculator
-    {
-        protected ComputeStrategy strategy;
-
-        public AbstractCalculator() { }
-
-        public abstract int Compute(int x, int y);
-    }
-
     //具体计算策略类
     public class Addition : ComputeStrategy
     {
@@ -38,17 +28,19 @@ namespace StrategyPattern
         }
     }
 
-    //具体计算器类
-    public class Calculator : AbstractCalculator
+    //计算器类
+    public class Calculator
     {
+        private ComputeStrategy _strategy;
+
         public Calculator(ComputeStrategy strategy)
         {
-            this.strategy = strategy;
+            _strategy = strategy;
         }
 
-        public override int Compute(int x, int y)
+        public int Compute(int x, int y)
         {
-            return strategy.compute(x, y);
+            return _strategy.compute(x, y);
         }
     }
 }

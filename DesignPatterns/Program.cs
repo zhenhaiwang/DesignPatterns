@@ -19,7 +19,8 @@ using System;
 //using FacadePattern;
 //using IteratorPattern;
 //using CompositePattern;
-using ProxyPattern;
+//using ProxyPattern;
+using BridgePattern;
 
 namespace DesignPatterns
 {
@@ -59,8 +60,7 @@ namespace DesignPatterns
             //Addition addition = new Addition();
             ////Multiplication multiplication = new Multiplication();
             //Calculator calculator = new Calculator(addition);
-            //int result = calculator.Compute(10, 5);
-            //Console.WriteLine(result.ToString());
+            //Console.WriteLine(calculator.Compute(10, 5).ToString());
 
             //7.StatePattern
             //PlayerController controller = new PlayerController(7);
@@ -153,9 +153,16 @@ namespace DesignPatterns
             //rootMenu.Print();
 
             //15.ProxyPattern
-            Proxy proxy = Proxy.RegisterProxy("http://...");
-            if(proxy != null)
-                proxy.Request();
+            //Proxy proxy = Proxy.RegisterProxy("http://...");
+            //if(proxy != null)
+            //    proxy.Request();
+
+            //16.BridgePattern
+            CalculatorAbstraction calculator = new Calculator();
+            calculator.strategy = new Addition();
+            Console.WriteLine(calculator.Compute(10, 5).ToString());
+            calculator.strategy = new Multiplication();
+            Console.WriteLine(calculator.Compute(10, 5).ToString());
 
             Console.Read();
         }
