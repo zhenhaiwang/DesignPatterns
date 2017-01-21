@@ -50,6 +50,7 @@
     <Compile Include="DecoratorPattern\DecoratorPattern.cs" />
     <Compile Include="FacadePattern\FacadePattern.cs" />
     <Compile Include="IteratorPattern\IteratorPattern.cs" />
+    <Compile Include="MementoPattern\MementoPattern.cs" />
     <Compile Include="ObserverPattern\ObserverPattern.cs" />
     <Compile Include="PrototypePattern\PrototypePattern.cs" />
     <Compile Include="ProxyPattern\ProxyPattern.cs" />

@@ -21,7 +21,8 @@ using System;
 //using CompositePattern;
 //using ProxyPattern;
 //using BridgePattern;
-using PrototypePattern;
+//using PrototypePattern;
+using MementoPattern;
 
 namespace DesignPatterns
 {
@@ -166,13 +167,30 @@ namespace DesignPatterns
             //Console.WriteLine(calculator.Compute(10, 5).ToString());
 
             //17.PrototypePattern
-            ConcretePrototype prototype = new ConcretePrototype();
-            ConcretePrototype deepClone = prototype.Clone(true) as ConcretePrototype;       //深克隆
-            Console.WriteLine(prototype == deepClone);
-            Console.WriteLine(prototype.member == deepClone.member);
-            ConcretePrototype shallowClone = prototype.Clone(false) as ConcretePrototype;   //浅克隆
-            Console.WriteLine(prototype == shallowClone);
-            Console.WriteLine(prototype.member == shallowClone.member);
+            //ConcretePrototype prototype = new ConcretePrototype();
+            //ConcretePrototype deepClone = prototype.Clone(true) as ConcretePrototype;       //深克隆
+            //Console.WriteLine(prototype == deepClone);
+            //Console.WriteLine(prototype.member == deepClone.member);
+            //ConcretePrototype shallowClone = prototype.Clone(false) as ConcretePrototype;   //浅克隆
+            //Console.WriteLine(prototype == shallowClone);
+            //Console.WriteLine(prototype.member == shallowClone.member);
+
+            //18.MementoPattern
+            System.Collections.Generic.List<ContactPerson> persons = new System.Collections.Generic.List<ContactPerson>()
+            {
+                new ContactPerson() { name=  "张三", number = "000000000"},
+                new ContactPerson() { name = "李四", number = "111111111"},
+                new ContactPerson() { name = "王五", number = "222222222"}
+            };
+            Originator admin = new Originator(persons);
+            admin.Print();
+            Caretaker caretaker = new Caretaker();
+            string time = DateTime.Now.Ticks.ToString();
+            caretaker.contactMementoDic.Add(time, admin.CreateMemento());   //创建还原点
+            admin.contactPersonList.RemoveAt(0);
+            admin.Print();
+            admin.RestoreMemento(caretaker.contactMementoDic[time]);        //还原到前一个联系人状态
+            admin.Print();
 
             Console.Read();
         }
