@@ -22,7 +22,10 @@ using System;
 //using ProxyPattern;
 //using BridgePattern;
 //using PrototypePattern;
-using MementoPattern;
+//using MementoPattern;
+//using BuilderPattern;
+//using ChainOfResponsibility;
+using InterpreterPattern;
 
 namespace DesignPatterns
 {
@@ -176,21 +179,49 @@ namespace DesignPatterns
             //Console.WriteLine(prototype.member == shallowClone.member);
 
             //18.MementoPattern
-            System.Collections.Generic.List<ContactPerson> persons = new System.Collections.Generic.List<ContactPerson>()
-            {
-                new ContactPerson() { name=  "张三", number = "000000000"},
-                new ContactPerson() { name = "李四", number = "111111111"},
-                new ContactPerson() { name = "王五", number = "222222222"}
-            };
-            Originator admin = new Originator(persons);
-            admin.Print();
-            Caretaker caretaker = new Caretaker();
-            string time = DateTime.Now.Ticks.ToString();
-            caretaker.contactMementoDic.Add(time, admin.CreateMemento());   //创建还原点
-            admin.contactPersonList.RemoveAt(0);
-            admin.Print();
-            admin.RestoreMemento(caretaker.contactMementoDic[time]);        //还原到前一个联系人状态
-            admin.Print();
+            //System.Collections.Generic.List<ContactPerson> persons = new System.Collections.Generic.List<ContactPerson>()
+            //{
+            //    new ContactPerson() { name=  "张三", number = "000000000"},
+            //    new ContactPerson() { name = "李四", number = "111111111"},
+            //    new ContactPerson() { name = "王五", number = "222222222"}
+            //};
+            //Originator admin = new Originator(persons);
+            //admin.Print();
+            //Caretaker caretaker = new Caretaker();
+            //string time = DateTime.Now.Ticks.ToString();
+            //caretaker.contactMementoDic.Add(time, admin.CreateMemento());   //创建还原点
+            //admin.contactPersonList.RemoveAt(0);
+            //admin.Print();
+            //admin.RestoreMemento(caretaker.contactMementoDic[time]);        //还原到前一个联系人状态
+            //admin.Print();
+
+            //19.BuilderPattern
+            //Director director = new Director();
+            //Builder b1 = new ConcreteBuilder1();
+            //Builder b2 = new ConcreteBuilder2();
+            //director.Construct(b1);
+            //Product p1 = b1.GetFinalProduct();
+            //p1.Print();
+            //director.Construct(b2);
+            //Product p2 = b2.GetFinalProduct();
+            //p2.Print();
+
+            //20.ChainOfResponsibility
+            //ConcreteHandler1 handler1 = new ConcreteHandler1();
+            //ConcreteHandler2 handler2 = new ConcreteHandler2();
+            //ConcreteHandler3 handler3 = new ConcreteHandler3();
+            //handler1.next = handler2;
+            //handler2.next = handler3;
+            //string[] requests = { "Handler2", "Handler3", "Handler1", "Handler3" };
+            //foreach (string request in requests)
+            //{
+            //    handler1.HandleRequest(request);
+            //}
+
+            //21.InterpreterPattern
+            string english = "This is an apple.";
+            string chinese = Translator.TranslateToChinese(english);
+            Console.WriteLine(chinese);
 
             Console.Read();
         }
