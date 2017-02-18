@@ -25,7 +25,10 @@ using System;
 //using MementoPattern;
 //using BuilderPattern;
 //using ChainOfResponsibility;
-using InterpreterPattern;
+//using InterpreterPattern;
+//using VisitorPattern;
+//using MediatorPattern;
+using FlyweightPattern;
 
 namespace DesignPatterns
 {
@@ -219,9 +222,39 @@ namespace DesignPatterns
             //}
 
             //21.InterpreterPattern
-            string english = "This is an apple.";
-            string chinese = Translator.TranslateToChinese(english);
-            Console.WriteLine(chinese);
+            //string english = "This is an apple.";
+            //string chinese = Translator.TranslateToChinese(english);
+            //Console.WriteLine(chinese);
+
+            //22.VisitorPattern
+            //ElementList elementList = new ElementList();
+            //foreach (Element e in elementList.elements)
+            //{
+            //    e.Accept(new ConcreteVistor1());
+            //    e.Accept(new ConcreteVistor2());
+            //}
+
+            //23.MediatorPattern
+            //PlayerA a = new PlayerA("Player A");
+            //PlayerB b = new PlayerB("Player B");
+            //Mediator mediator = new Mediator(a, b);
+            //mediator.ATalk();
+            //mediator.BTalk();
+
+            //24.FlyweightPattern
+            FlyweightFactory factory = new FlyweightFactory();
+            FlyweightTree poplarTree = factory.GetTree("Poplar");
+            Console.WriteLine(poplarTree.ToString());
+            poplarTree.height = 5.5f;
+            poplarTree.orientation = 90.0f;
+            Console.WriteLine(poplarTree.ToString());
+            FlyweightTree willowTree = factory.GetTree("Willow");
+            willowTree.height = 4.5f;
+            willowTree.orientation = 125.0f;
+            Console.WriteLine(willowTree.ToString());
+            willowTree.height = 2.5f;
+            willowTree.orientation = 45.0f;
+            Console.WriteLine(willowTree.ToString());
 
             Console.Read();
         }

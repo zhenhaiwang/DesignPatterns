@@ -51,8 +51,10 @@
     <Compile Include="CompositePattern\CompositePattern.cs" />
     <Compile Include="DecoratorPattern\DecoratorPattern.cs" />
     <Compile Include="FacadePattern\FacadePattern.cs" />
+    <Compile Include="FlyweightPattern\FlyweightPattern.cs" />
     <Compile Include="InterpreterPattern\InterpreterPattern.cs" />
     <Compile Include="IteratorPattern\IteratorPattern.cs" />
+    <Compile Include="MediatorPattern\MediatorPattern.cs" />
     <Compile Include="MementoPattern\MementoPattern.cs" />
     <Compile Include="ObserverPattern\ObserverPattern.cs" />
     <Compile Include="PrototypePattern\PrototypePattern.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="StatePattern\StatePattern.cs" />
     <Compile Include="StrategyPattern\StrategyPattern.cs" />
     <Compile Include="TemplateMethod\TemplateMethod.cs" />
+    <Compile Include="VisitorPattern\VisitorPattern.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
