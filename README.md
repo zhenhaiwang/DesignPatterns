@@ -1,8 +1,6 @@
 ﻿# DesignPatterns
 
-------
-
-## Design pattern examples in C#.
+Design pattern examples in C#.
 
 >* `SimpleFactory` 简单工厂模式
 >* `FactoryMethod` 工厂方法模式
