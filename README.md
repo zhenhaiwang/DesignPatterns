@@ -1,5 +1,3 @@
-﻿# Design Pattern Examples - C#
-
 >* `SimpleFactory` 简单工厂模式
 >* `FactoryMethod` 工厂方法模式
 >* `AbstractFactory` 抽象工厂模式
